@@ -1918,9 +1918,11 @@ def jauge_sante(v, height=250):
 # 7. FIGURES CARTOGRAPHIQUES
 # =============================================================================
 
-# Plotly < 5.24 ne connaît que les tracés « mapbox » ; les versions récentes
-# leur préfèrent « map ». On s'adapte pour rester compatible des deux côtés.
-USE_MAPLIBRE = hasattr(go, "Scattermap")
+# Plotly >= 5.24 propose en plus des tracés « map », mais les fonds
+# administratifs sont dessinés ici avec Choroplethmapbox. Mélanger les deux
+# familles créerait deux cartes superposées et désynchronisées : tout reste
+# donc en « mapbox », disponible dans toutes les versions de Plotly.
+USE_MAPLIBRE = False
 
 
 def trace_map(**kw):
