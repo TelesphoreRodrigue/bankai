@@ -1,0 +1,15 @@
+# Identifiants : jamais dans le dépôt (à saisir dans les secrets de l'hébergeur)
+.streamlit/secrets.toml
+
+# Fichiers générés par Python et par l'éditeur
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+
+# Données d'inventaire : les classeurs ne sont pas publiés. Chaque utilisateur
+# importe le sien depuis la barre latérale de l'application.
+*.xlsx
+*.xls
+*.csv
+data/
